@@ -1,0 +1,6 @@
+( * = optional )
+Functions:
+wait(timer*, repeats*) - waits a number of seconds (timer) as many times as you want (repeats)
+end_script() - ends the script
+draw_squares(NoPattern*,times*, size*) - Can draw squares in a pattern or randomly, you get to chose how many squares and the size
+get_random_number(min*, max*) - Returns a random number, you get to choose the minimum and the maximum.
