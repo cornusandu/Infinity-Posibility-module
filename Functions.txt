@@ -4,3 +4,4 @@ wait(timer*, repeats*) - waits a number of seconds (timer) as many times as you 
 end_script() - ends the script
 draw_squares(NoPattern*,times*, size*) - Can draw squares in a pattern or randomly, you get to chose how many squares and the size
 get_random_number(min*, max*) - Returns a random number, you get to choose the minimum and the maximum.
+log(log*, print*, list*, returner*) - It is highly suggested to use log(log="",print=""), instead of 'print' you can put: 'print', 'list' or 'returner'
