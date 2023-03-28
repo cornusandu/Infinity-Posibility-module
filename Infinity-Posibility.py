@@ -38,5 +38,5 @@ def log(log="Hello world!", print: Optional[bool] = None, list: Optional[bool] =
 
 # Default code if ran as a program:
 if __name__ == '__main__':
-  print("Reminder: The code is supposed to be used as a module!")
+  log(log="Reminder: The code is supposed to be used as a module!", print=True)
   draw_squares(True,15)
