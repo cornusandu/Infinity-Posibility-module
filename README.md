@@ -4,7 +4,7 @@
 > 2. install module "turtle".
 > 3. install module "random".
 > 4. install module "typing".
-> 5. install module "asyncio.windows_events".
+> 5. install module "asyncio".
 > >   Please note that the modules above are usually pre-installed with python.
 
 > ## How to use
