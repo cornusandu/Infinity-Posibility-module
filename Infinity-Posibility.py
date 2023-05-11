@@ -83,3 +83,46 @@ def get_logs_list():
 def clear_logs_list():
   global list1
   list1 = []
+
+# Code Class
+class Code:
+	def __init__(self, code_func: callable, handle_errors: bool = False):
+		self.code_func: callable = code_func
+		self.handle_errors: bool = handle_errors
+
+	def __repr__(self):
+		return f"Code Object: {self.code_func}|{self.handle_errors}"
+
+	def check(self) -> bool:
+		if self.code_func is not None:
+			try:
+				if isinstance(self.code_func, callable):
+					return True
+				else:
+					return False
+			except Exception:
+				return False
+		return False
+	
+	def __eq__(self, other):
+		if isinstance(other, Code):
+			try:
+				return self.code_func == other.code_func and self.check() == other.check()
+			except Exception as e:
+				return False
+		return False
+
+	def run(self):
+		if self.handle_errors:
+			try:
+				self.code_func()
+			except Exception as e:
+				raise SystemError("Error at running code inside a Code class. Disable handle_errors to get the normal message") from e
+		else:
+			self.code_func()
+	def delete(self) -> bool:
+		try:
+			self.code_func: callable | None = None
+			return True
+		except Exception as e:
+			return False
