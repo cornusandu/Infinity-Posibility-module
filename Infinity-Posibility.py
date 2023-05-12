@@ -126,3 +126,7 @@ class Code:
 			return True
 		except Exception as e:
 			return False
+def realistic_round(num):
+	rounding_factor: int = 1
+	rounded_num = decimal.Decimal(num / rounding_factor).quantize(decimal.Decimal('1'), rounding=decimal.ROUND_HALF_UP)
+	return float(rounded_num * rounding_factor)
