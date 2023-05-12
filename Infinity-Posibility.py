@@ -130,3 +130,34 @@ def realistic_round(num):
 	rounding_factor: int = 1
 	rounded_num = decimal.Decimal(num / rounding_factor).quantize(decimal.Decimal('1'), rounding=decimal.ROUND_HALF_UP)
 	return float(rounded_num * rounding_factor)
+def log_to_file(file: str, mode: str, *messages) -> None:
+    """
+    Logs a message.
+    
+    Parameters:
+        file: str   --- File name;
+        mode: str   --- Write Mode;
+        *messages   --- Messages to write;
+        
+    Output -> None;
+    """
+    message = ' '.join(messages)
+    with open(file, mode) as f:
+        f.write(message)
+
+def delete_logs(file: str) -> None:
+    """
+    Deletes a log file.
+
+    Parameters:
+        file: str   --- File name;
+    
+    Output -> None;
+
+    Requirements:
+        file: str must end in '.txt', '.out', '.log' or '.logs';
+    """
+    if file.endswith(".txt") or file.endswith(".out") or file.endswith(".log") or file.endswith(".logs"):
+        remove(file)
+    else:
+        raise Exception(f"Error at deleting file '{file}'. Reason: file may not be a logs file. Use os.remove() to remove the file instead.")
