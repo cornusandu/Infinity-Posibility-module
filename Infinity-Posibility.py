@@ -1,6 +1,9 @@
 import time
 from typing import Optional, Callable
-from asyncio.windows_events import NULL
+try:
+	from asyncio.windows_events import NULL
+except:
+	pass
 from turtle import *
 import random
 def wait(timer=1, repeats=1):
@@ -26,10 +29,10 @@ def draw_squares(Pattern=False,times=10, size=30):
 list1 = []
 def get_random_number(min=0, max=10):
     return random.randint(min,max)
-def log(log="Hello world!", print: Optional[bool] = None, list: Optional[bool] = None, returner: Optional[bool] = None):
-  if print is not None:
+def log(log: str="Hello world!", print: bool = False, list: bool = False, returner: bool = False):
+  if print:
     print(log)
-  elif list is not None:
+  elif list:
     global list1
     list2 = []
     list1.append(log)
@@ -42,7 +45,7 @@ def log(log="Hello world!", print: Optional[bool] = None, list: Optional[bool] =
 
 # Default code if ran as a program:
 if __name__ == '__main__':
-  log(log="Reminder: The code is supposed to be used as a module!", print=True)
+  print("Reminder: The code is supposed to be used as a module!")
   draw_squares(True,15)
 
 class Maped:
