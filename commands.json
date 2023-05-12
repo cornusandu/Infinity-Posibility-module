@@ -1,0 +1,27 @@
+{
+    "Functions": {
+        "wait(timer*, repeats*)": "",
+        "end_script()": "",
+        "draw_squares(NoPattern*,times*, size*)": "",
+        "get_random_number(min*, max*)": "",
+        "log(log*, print*, list*, returner*)": "",
+        "get_logs_list()": "",
+        "clear_logs_list()": "",
+        "realistic_round(num)": "",
+        "log_to_file(file, write_mode, messages)": ""
+    },
+    "Classes": {
+        "Maped": [
+            "Maped(string_value)",
+            "Maped(string_value).split(char*, get*)",
+            "Maped(string_value).unsplit(char*, split*)"
+        ],
+        "Code": [
+            "Code(function, handle_errors*)",
+            {
+                "Code().check()": "Check if the code exists",
+                "Code().run()": "Run the code"
+            }
+        ]
+    }
+}
